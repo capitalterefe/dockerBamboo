@@ -9,7 +9,11 @@ node {
                  
       mvnHome = tool 'M3'
    }
-   stage('Build') {
+    stage('Start Selenium Grid') {
+
+                sh "docker-compose up -d"
+     }
+   stage('Test') {
       
          sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean verify"
      

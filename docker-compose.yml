@@ -1,0 +1,20 @@
+selenium-hub:
+  image: capitalt/selenium-hub-google-cloud:v1.0
+  ports:
+      - "4444:4444"
+
+chrome:
+  image: capitalt/selenium-chrome-node-debug-google-cloud:v1.0
+  links:
+   - selenium-hub:hub
+  volumes:
+   - /dev/shm:/dev/shm # Mitigates the Chromium issue described at https://code.google.com/p/chromium/issues/detail?id=519952
+  ports:
+   - 5900
+
+firefox:
+  image: capitalt/selenium-firefox-node-debug-google-cloud:v1.0
+  links:
+   - selenium-hub:hub
+  ports:
+   - 5900
