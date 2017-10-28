@@ -3,9 +3,10 @@
   pipeline {
     agent none 
     stages {
-	def mvnHome
+	
   
         stage('Configuration') {
+        def mvnHome
             steps {
              mvnHome = tool 'M3'
             }
