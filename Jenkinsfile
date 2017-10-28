@@ -9,7 +9,9 @@ node {
    }
    stage "Run container"
 node {
-    sh 'docker-compose  -f docker-compose.yml up -d'
+   sshagent(['c4725c71-bcfb-49e0-b8fa-58e9e1529dea']) {
+    /usr/local/bin/start-grid.sh
+}
 }
     
    stage('Test') {
