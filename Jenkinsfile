@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
   
-   pipeline {
+   node {
+   
 	def mvnHome
-    agent any
     stages {
         stage('Configuration') {
             steps {
