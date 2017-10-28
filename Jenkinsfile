@@ -10,8 +10,7 @@ node {
    stage "Run container"
 node {
    sshagent(['c4725c71-bcfb-49e0-b8fa-58e9e1529dea']) {
-    sh 'ssh jenkins@35.196.229.177'
-    sh '/usr/local/bin/start-grid.sh'
+    sh 'ssh -tt jenkins@35.196.229.177 /usr/local/bin/start-grid.sh'
 }
 }
     
