@@ -1,12 +1,12 @@
 #!/usr/bin/env groovy
   
   pipeline {
-  def mvnHome
+ 
     agent any 
     stages {
         stage('Configuration') {
             steps {
-             mvnHome = tool 'M3'
+             def mvnHome = tool 'M3'
             }
         }
         stage('Git Check-Out') {
