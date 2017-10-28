@@ -1,7 +1,8 @@
 #!/usr/bin/env groovy
   
-   node {
-   
+  pipeline {
+    agent none 
+    stages {
 	def mvnHome
   
         stage('Configuration') {
@@ -40,6 +41,7 @@
    		       }
         failure {
            // mail to: team@example.com, subject: 'The Pipeline failed :('
+        }
         }
     
 }
