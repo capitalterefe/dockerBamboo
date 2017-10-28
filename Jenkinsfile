@@ -3,7 +3,7 @@
    node {
    
 	def mvnHome
-    stages {
+  
         stage('Configuration') {
             steps {
              mvnHome = tool 'M3'
@@ -41,7 +41,7 @@
         failure {
            // mail to: team@example.com, subject: 'The Pipeline failed :('
         }
-    }
+    
 }
  
    
