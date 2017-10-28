@@ -19,6 +19,6 @@ node {
    }
    stage('Publish Result') {
      
-     publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '**/target', reportFiles: 'index.html', reportName: 'Serenity Report', reportTitles: ''])
+     publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/serenity', reportFiles: 'index.html', reportName: 'Serenity Report', reportTitles: ''])
    }
    }}
