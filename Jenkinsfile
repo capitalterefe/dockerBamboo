@@ -6,7 +6,7 @@
     stages {
         stage('Configuration') {
             steps {
-             def mvnHome = tool 'M3'
+             //def mvnHome = tool 'M3'
             }
         }
         stage('Git Check-Out') {
