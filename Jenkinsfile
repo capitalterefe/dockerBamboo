@@ -6,6 +6,7 @@
     stages {
         stage('Configuration') {
             steps {
+                    sh 'echo hello'
              //def mvnHome = tool 'M3'
             }
         }
@@ -39,6 +40,7 @@
    				   } 
    		       }
         failure {
+        sh 'echo hello'
            // mail to: team@example.com, subject: 'The Pipeline failed :('
         }
         }
