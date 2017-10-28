@@ -4,8 +4,8 @@
  
    agent any 
    tools {
- 		maven 'Maven 3.5.0'
- 		jdk 'Oracle JDK 8u152'
+ 		maven 'M3'
+ 		jdk 'JDK1.8'
 		} 
 	stages{
         stage('Git Check-Out') {
