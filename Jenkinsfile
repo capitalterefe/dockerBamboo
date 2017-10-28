@@ -4,15 +4,10 @@
  
     agent any 
       tools {
-        mvnHome 'M3' 
-    }
-    stages {
-        stage('Configuration') {
-            steps {
-                    sh 'echo hello'
-             //def mvnHome = tool 'M3'
-            }
-        }
+ 		maven 'Maven 3.5.0'
+ 		jdk 'Oracle JDK 8u152'
+		} 
+		
         stage('Git Check-Out') {
             steps {
                    git 'https://github.com/seleniumBatch2017/dockerBamboo.git'
@@ -27,7 +22,7 @@
         }
         stage('Run Automated Tests') {
             steps {
-         			sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean verify"
+         			sh 'mvn -Dmaven.test.failure.ignore clean verify'
             }
         }
         stage('Generate Serenity Report') {
@@ -35,7 +30,7 @@
     			 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/serenity', reportFiles: 'index.html', reportName: 'Serenity Report', reportTitles: ''])
             }
         }
-    }
+    
     post {
         always {
 					sshagent(['c4725c71-bcfb-49e0-b8fa-58e9e1529dea']) {
@@ -49,6 +44,7 @@
         }
     
 }
+
  
    
    
