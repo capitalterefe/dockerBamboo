@@ -2,12 +2,12 @@
   
   pipeline {
  
-    agent any 
-      tools {
+   agent any 
+   tools {
  		maven 'Maven 3.5.0'
  		jdk 'Oracle JDK 8u152'
 		} 
-		
+	stages{
         stage('Git Check-Out') {
             steps {
                    git 'https://github.com/seleniumBatch2017/dockerBamboo.git'
@@ -30,6 +30,7 @@
     			 publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/serenity', reportFiles: 'index.html', reportName: 'Serenity Report', reportTitles: ''])
             }
         }
+   }
     
     post {
         always {
@@ -38,10 +39,10 @@
    				   } 
    		       }
         failure {
-        sh 'echo hello'
+        	sh 'echo hello'
            // mail to: team@example.com, subject: 'The Pipeline failed :('
-        }
-        }
+        		}
+    }
     
 }
 
