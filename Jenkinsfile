@@ -10,7 +10,7 @@ node {
    stage "Run container"
 node {
    sshagent(['c4725c71-bcfb-49e0-b8fa-58e9e1529dea']) {
-    /usr/local/bin/start-grid.sh
+    sh 'ssh-add -l'
 }
 }
     
