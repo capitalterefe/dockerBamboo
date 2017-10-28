@@ -3,6 +3,9 @@
   pipeline {
  
     agent any 
+      tools {
+        mvnHome 'M3' 
+    }
     stages {
         stage('Configuration') {
             steps {
