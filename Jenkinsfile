@@ -16,7 +16,7 @@
         stage('Spin-Up Selenium-Grid Containers') {
             steps {
                    sshagent(['c4725c71-bcfb-49e0-b8fa-58e9e1529dea']) {
-    				sh 'ssh -tt jenkins@35.196.229.177 /usr/local/bin/start-grid.sh'
+    				sh 'ssh -tt jenkins@35.190.151.173  /usr/local/bin/start-grid.sh'
    				   }
             }
         }
@@ -35,7 +35,7 @@
     post {
         always {
 					sshagent(['c4725c71-bcfb-49e0-b8fa-58e9e1529dea']) {
-    				sh 'ssh -tt jenkins@35.196.229.177 /usr/local/bin/stop-grid.sh'
+    				sh 'ssh -tt jenkins@35.190.151.173 /usr/local/bin/stop-grid.sh'
    				   } 
    		       }
         failure {
